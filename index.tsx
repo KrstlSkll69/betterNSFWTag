@@ -117,7 +117,7 @@ function onGuildChange() {
 
 export default definePlugin({
     name: "BetterNSFWTag",
-    description: "Adds NSFW badge next to of type of channels.",
+    description: "Adds NSFW badge next to those type of channels.",
     authors: [
         { name: "creations", id: 209830981060788225n },
         { name: "krystalskullofficial", id: 929208515883569182n },
