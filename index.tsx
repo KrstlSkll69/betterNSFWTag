@@ -13,6 +13,7 @@ import { Channel, Guild } from "discord-types/general";
 
 import { isEnabled, returnChannelBadge, settings } from "./settings";
 
+
 let observer: MutationObserver | null = null;
 let currentGuild: Guild | undefined | null = null;
 
@@ -23,8 +24,7 @@ function addBadgesToChannel(element: HTMLElement, channelId: string) {
     const channel: Channel | undefined = ChannelStore.getChannel(channelId);
     if (!channel || !isEnabled(channel.type)) return;
 
-    const { type, nsfw, threadMetadata } = channel;
-    const isPrivate = channel.isPrivate() || threadMetadata?.locked || channel.isArchivedThread();
+    const { type, nsfw } = channel;
     const isNSFW = nsfw || channel.isNSFW();
 
     let badgeContainer: HTMLElement | null = parentContainer.querySelector(".badge-container");
@@ -115,8 +115,8 @@ function onGuildChange() {
 }
 
 export default definePlugin({
-    name: "ChannelBadges",
-    description: "Adds badges to channels based on their type",
+    name: "BetterNSFWTag",
+    description: "Adds NSFW badge next to of type of channels.",
     authors: [],
     settings,
 

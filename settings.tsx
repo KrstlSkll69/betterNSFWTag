@@ -13,7 +13,8 @@ const settings = definePluginSettings({
     oneBadgePerChannel: {
         type: OptionType.BOOLEAN,
         default: false,
-        description: "Show only one badge per channel",
+        description: "",
+        hidden: true,
         onChange: reloadBadges,
     },
     showTextBadge: {
@@ -80,8 +81,9 @@ const settings = definePluginSettings({
     },
     unknownBadgeLabel: {
         type: OptionType.STRING,
-        default: "Unknown",
-        description: "Unknown badge label",
+        default: "",
+        description: "",
+        hidden: true,
         onChange: reloadBadges,
     },
 
@@ -111,7 +113,8 @@ const settings = definePluginSettings({
     },
     unknownBadgeColor: {
         type: OptionType.STRING,
-        description: "Unknown badge color",
+        description: "",
+        hidden: true,
         onChange: reloadBadges,
     },
 });
