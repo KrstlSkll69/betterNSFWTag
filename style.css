@@ -18,24 +18,12 @@
     order: 2;
 }
 
-.channel-badge-text {
-    display: none !important;
-}
-
-.channel-badge-voice {
-    display: none !important;
-}
-
-.channel-badge-stage{
+.channel-badge-text, .channel-badge-unknown, .channel-badge-voice, .channel-badge-stage{
     display: none !important;
 }
 
 .channel-badge-nsfw {
     background-color: var(--status-danger-background);
-}
-
-.channel-badge-unknown {
-    display: none !important;
 }
 
 .vc-pluginFormat {
@@ -48,7 +36,7 @@
 }
 
 .vc-pluginNotice {
-    font-size: 14px !important;
+    font-size: 15px !important;
     background-color: var(--info-warning-background) !important;
     color: var(--info-warning-text) !important;
     border-color: var(--info-warning-foreground) !important;

@@ -13,7 +13,7 @@ _(Photo does not includes Recolor NSFW Triangle setting enabled)_</br>
 ---
 </br>
 
-![](https://cdn.nest.rip/uploads/4189f7cf-3a0a-400f-8853-981352372d25.png)
+![](https://cdn.nest.rip/uploads/7a5f0190-4922-4e4f-854f-e29e92222bc3.png)
 
 ---
 

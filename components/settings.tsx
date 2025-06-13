@@ -7,8 +7,8 @@
 import { definePluginSettings } from "@api/Settings";
 import { OptionType } from "@utils/types";
 
-import { reloadBadges } from "./index";
-import style from "./triangleRecolor.css?managed";
+import { reloadBadges } from "../index";
+import style from "./import/triangleRecolor.css?managed";
 
 const settings = definePluginSettings({
     oneBadgePerChannel: {
@@ -40,7 +40,7 @@ const settings = definePluginSettings({
         onChange: reloadBadges,
     },
 
-    recolorNsfwTriangle:{
+    recolorNsfwTriangle: {
         type: OptionType.BOOLEAN,
         default: false,
         description: "Recolor the triangle in the icon for NSFW channels.",

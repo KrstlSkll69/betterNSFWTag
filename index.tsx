@@ -12,7 +12,7 @@ import definePlugin from "@utils/types";
 import { ChannelStore, Forms, SelectedGuildStore } from "@webpack/common";
 import { Channel, Guild } from "discord-types/general";
 
-import { isEnabled, returnChannelBadge, settings, style } from "./settings";
+import { isEnabled, returnChannelBadge, settings, style } from "./components/settings";
 
 
 let observer: MutationObserver | null = null;
@@ -134,7 +134,7 @@ export default definePlugin({
         observeDomChanges();
         reloadBadges();
         SelectedGuildStore.addChangeListener(onGuildChange);
-        if (settings.store.recolorNSFWTriangle) enableStyle(style);
+        if (settings.store.recolorNsfwTriangle) enableStyle(style);
     },
 
     stop() {
@@ -144,7 +144,7 @@ export default definePlugin({
         }
         deleteAllBadges();
         SelectedGuildStore.removeChangeListener(onGuildChange);
-        if (settings.store.recolorNSFWTriangle) disableStyle(style);
+        if (settings.store.recolorNsfwTriangle) disableStyle(style);
     },
 
 
