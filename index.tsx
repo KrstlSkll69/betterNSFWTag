@@ -37,7 +37,6 @@ function addBadgesToChannel(element: HTMLElement, channelId: string) {
 
     const badgeConditions = [
         { id: 6100, condition: isNSFW, title: "This channel is marked as NSFW." },
-        { id: 6102, condition: currentGuild?.rulesChannelId === channel.id, title: "This channel is the server rules channel." },
     ];
 
     badgeConditions.forEach(({ id, condition, title }) => {
