@@ -21,7 +21,7 @@ const settings = definePluginSettings({
     showTextBadge: {
         type: OptionType.BOOLEAN,
         default: true,
-        description: "Show Text badge",
+        description: "",
         hidden: true,
         onChange: reloadBadges,
     },
@@ -29,25 +29,25 @@ const settings = definePluginSettings({
         type: OptionType.BOOLEAN,
         default: true,
         hidden: true,
-        description: "Show Voice badge",
+        description: "",
         onChange: reloadBadges,
     },
     showStageBadge: {
         type: OptionType.BOOLEAN,
         default: true,
-        description: "Show Stage badge",
+        description: "",
         hidden: true,
         onChange: reloadBadges,
     },
 
-    recolorNSFWTriangle:{
+    recolorNsfwTriangle:{
         type: OptionType.BOOLEAN,
         default: false,
         description: "Recolor the triangle in the icon for NSFW channels.",
         restartNeeded: true
     },
 
-    showNSFWBadge: {
+    showNsfwBadge: {
         type: OptionType.BOOLEAN,
         default: true,
         description: "Show NSFW badge.",
@@ -159,7 +159,7 @@ function isEnabled(type: number) {
             return fromValues.showStageBadge;
         case 14:
         case 6100:
-            return fromValues.showNSFWBadge;
+            return fromValues.showNsfwBadge;
         default:
             return fromValues.showUnknownBadge;
     }
