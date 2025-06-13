@@ -8,6 +8,7 @@ import { definePluginSettings } from "@api/Settings";
 import { OptionType } from "@utils/types";
 
 import { reloadBadges } from "./index";
+import style from "./triangleRecolor.css?managed";
 
 const settings = definePluginSettings({
     oneBadgePerChannel: {
@@ -38,6 +39,14 @@ const settings = definePluginSettings({
         hidden: true,
         onChange: reloadBadges,
     },
+
+    recolorNSFWTriangle:{
+        type: OptionType.BOOLEAN,
+        default: false,
+        description: "Recolor the triangle in the icon for NSFW channels",
+        restartNeeded: true
+    },
+
     showNSFWBadge: {
         type: OptionType.BOOLEAN,
         default: true,
@@ -170,4 +179,4 @@ function returnChannelBadge(type: number) {
     }
 }
 
-export { defaultValues, isEnabled, returnChannelBadge, settings };
+export { defaultValues, isEnabled, returnChannelBadge, settings, style };

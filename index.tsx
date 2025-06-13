@@ -6,12 +6,13 @@
 
 import "./style.css";
 
+import { disableStyle, enableStyle } from "@api/Styles";
 import { getCurrentGuild } from "@utils/discord";
 import definePlugin from "@utils/types";
 import { ChannelStore, SelectedGuildStore } from "@webpack/common";
 import { Channel, Guild } from "discord-types/general";
 
-import { isEnabled, returnChannelBadge, settings } from "./settings";
+import { isEnabled, returnChannelBadge, settings, style } from "./settings";
 
 
 let observer: MutationObserver | null = null;
@@ -125,6 +126,7 @@ export default definePlugin({
         observeDomChanges();
         reloadBadges();
         SelectedGuildStore.addChangeListener(onGuildChange);
+        if (settings.store.recolorNSFWTriangle) enableStyle(style);
     },
 
     stop() {
@@ -134,5 +136,8 @@ export default definePlugin({
         }
         deleteAllBadges();
         SelectedGuildStore.removeChangeListener(onGuildChange);
-    }
+        if (settings.store.recolorNSFWTriangle) disableStyle(style);
+    },
+
+
 });
