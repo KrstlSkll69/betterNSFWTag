@@ -1,0 +1,43 @@
+.channel-badge {
+    margin-left: 0.2rem;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    color: var(--white);
+    order: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.badge-container {
+    display: flex;
+    gap: 0.1rem;
+    align-items: center;
+    margin-left: 0.2rem;
+    order: 2;
+}
+
+.channel-badge-text {
+    display: none !important;
+}
+
+.channel-badge-voice {
+    display: none !important;
+}
+
+.channel-badge-stage{
+    display: none !important;
+}
+
+.channel-badge-nsfw {
+    background-color: #E91E63;
+}
+
+
+.channel-badge-unknown {
+    display: none !important;
+}
