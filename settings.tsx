@@ -43,20 +43,20 @@ const settings = definePluginSettings({
     recolorNSFWTriangle:{
         type: OptionType.BOOLEAN,
         default: false,
-        description: "Recolor the triangle in the icon for NSFW channels",
+        description: "Recolor the triangle in the icon for NSFW channels.",
         restartNeeded: true
     },
 
     showNSFWBadge: {
         type: OptionType.BOOLEAN,
         default: true,
-        description: "Show NSFW badge",
+        description: "Show NSFW badge.",
         onChange: reloadBadges,
     },
     showUnknownBadge: {
         type: OptionType.BOOLEAN,
         default: true,
-        description: "Show Unknown badge",
+        description: "",
         hidden: true,
         onChange: reloadBadges,
     },
@@ -85,7 +85,8 @@ const settings = definePluginSettings({
     nsfwBadgeLabel: {
         type: OptionType.STRING,
         default: "NSFW",
-        description: "NSFW badge label",
+        placeholder: "NSFW",
+        description: "NSFW badge label.",
         onChange: reloadBadges,
     },
     unknownBadgeLabel: {
@@ -117,7 +118,8 @@ const settings = definePluginSettings({
     },
     nsfwBadgeColor: {
         type: OptionType.STRING,
-        description: "NSFW badge color",
+        description: "NSFW badge color. Supports almost any color format.",
+        placeholder: "#ff0000",
         onChange: reloadBadges,
     },
     unknownBadgeColor: {

@@ -9,7 +9,7 @@ import "./style.css";
 import { disableStyle, enableStyle } from "@api/Styles";
 import { getCurrentGuild } from "@utils/discord";
 import definePlugin from "@utils/types";
-import { ChannelStore, SelectedGuildStore } from "@webpack/common";
+import { ChannelStore, Forms, SelectedGuildStore } from "@webpack/common";
 import { Channel, Guild } from "discord-types/general";
 
 import { isEnabled, returnChannelBadge, settings, style } from "./settings";
@@ -118,7 +118,15 @@ function onGuildChange() {
 export default definePlugin({
     name: "BetterNSFWTag",
     description: "Adds NSFW badge next to of type of channels.",
-    authors: [],
+    authors: [
+        { name: "creations", id: 209830981060788225n },
+        { name: "krystalskullofficial", id: 929208515883569182n },
+    ],
+    settingsAboutComponent: () => <>
+        <Forms.FormText className="vc-pluginFormat vc-pluginNotice">
+            Be sure to include the pound/ hashtag (#) symbol when using Hex code format.
+        </Forms.FormText>
+    </>,
     settings,
 
     async start() {

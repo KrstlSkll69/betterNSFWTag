@@ -1,16 +1,13 @@
 .channel-badge {
-    margin-left: 0.2rem;
-    padding: 2px 8px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline-block;
-    color: var(--white);
-    order: 2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
+    color: var(--status-danger-text);
+    font-family: var(--font-code);
+    padding: 0 4px;
+    border-radius: 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    line-height: 17px;
+    margin-left: 4px;
 }
 
 .badge-container {
@@ -34,10 +31,25 @@
 }
 
 .channel-badge-nsfw {
-    background-color: #E91E63;
+    background-color: var(--status-danger-background);
 }
-
 
 .channel-badge-unknown {
     display: none !important;
+}
+
+.vc-pluginFormat {
+    border-radius: 5px !important;
+    font-weight: bold;
+    padding: 6px 10px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid;
+}
+
+.vc-pluginNotice {
+    font-size: 14px !important;
+    background-color: var(--info-warning-background) !important;
+    color: var(--info-warning-text) !important;
+    border-color: var(--info-warning-foreground) !important;
 }
