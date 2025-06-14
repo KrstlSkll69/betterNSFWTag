@@ -4,7 +4,7 @@ Add NSFW badge next to those type of channels. </br>
 _(Photo includes Colourful Channel Icons setting enabled)_</br>
 ![](https://cdn.nest.rip/uploads/77083e4a-e24b-4e82-b997-2da6661cfb8f.png)</br>
 
-_(Photo does not includes Recolor NSFW Triangle setting enabled)_</br>
+_(Photo does not include Colourful Channel Icons setting enabled)_</br>
 ![](https://cdn.nest.rip/uploads/a640d6f6-0c05-4cd6-950e-e8443972a935.png)
 
 ---
