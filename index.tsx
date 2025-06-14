@@ -7,6 +7,7 @@
 import "./style.css";
 
 import { disableStyle, enableStyle } from "@api/Styles";
+import { Devs } from "@utils/constants";
 import { getCurrentGuild } from "@utils/discord";
 import definePlugin from "@utils/types";
 import { ChannelStore, Forms, SelectedGuildStore } from "@webpack/common";
@@ -117,6 +118,8 @@ export default definePlugin({
     name: "BetterNSFWTag",
     description: "Adds NSFW badge next to those type of channels.",
     authors: [
+        Devs.Nuckyz,
+        Devs.sadan,
         { name: "creations", id: 209830981060788225n },
         { name: "krystalskullofficial", id: 929208515883569182n },
     ],
