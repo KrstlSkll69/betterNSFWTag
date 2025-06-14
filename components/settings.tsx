@@ -79,7 +79,7 @@ const settings = definePluginSettings({
     colourfulChannelIcons: {
         type: OptionType.BOOLEAN,
         default: false,
-        description: "Makes channel icons with symbols more colorful.",
+        description: "Makes channel icons with symbols more colourful.",
         restartNeeded: true
     },
 
@@ -98,9 +98,9 @@ const settings = definePluginSettings({
         onChange: reloadBadges,
     },
 
-    nsfwBadgeColor: {
+    nsfwBadgeColour: {
         type: OptionType.STRING,
-        description: "NSFW badge color. Supports almost any color format.",
+        description: "NSFW badge colour. Supports almost any colour format. Default is Red.",
         placeholder: "#ff0000",
         onChange: reloadBadges,
     },
@@ -167,7 +167,7 @@ function returnChannelBadge(type: number) {
         case 13:
             return { css: "stage", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
         case 6100:
-            return { css: "nsfw", label: settings.store.nsfwBadgeLabel, color: settings.store.nsfwBadgeColor };
+            return { css: "nsfw", label: settings.store.nsfwBadgeLabel, color: settings.store.nsfwBadgeColour };
         default:
             return { css: "unknown", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
     }
