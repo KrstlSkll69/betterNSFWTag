@@ -4,11 +4,57 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+import "./customSize.css";
+
 import { definePluginSettings } from "@api/Settings";
-import { OptionType } from "@utils/types";
+import { ErrorBoundary, Flex } from "@components/index";
+import { Margins } from "@utils/index";
+import { defineDefault, OptionType } from "@utils/types";
+import { Checkbox, Forms, Text } from "@webpack/common";
 
 import { reloadBadges } from "../index";
-import style from "./import/triangleRecolor.css?managed";
+import Nsfwstyle from "./import/triangleNsfwRecolor.css?managed";
+
+interface AllowLevels {
+    showTextBadge: boolean;
+    showVoiceBadge: boolean;
+    showStageBadge: boolean;
+    showUnknownBadge: boolean;
+}
+
+interface AllowLevelSettingProps {
+    settingKey: keyof AllowLevels;
+}
+
+function AllowLevelSetting({ settingKey }: AllowLevelSettingProps) {
+    const { allowLevel } = settings.use(["allowLevel"]);
+    const value = allowLevel[settingKey];
+
+    return (
+        <Checkbox
+            value={value}
+            onChange={(_, newValue) => settings.store.allowLevel[settingKey] = newValue}
+            size={20}
+        >
+
+            <Text className="vc-badgeLocation-txt">{settingKey[0].toUpperCase() + settingKey.slice(1)}</Text>
+        </Checkbox>
+    );
+}
+
+const AllowLevelSettings = ErrorBoundary.wrap(() => {
+    return (
+        <Forms.FormSection>
+            <Forms.FormTitle tag="h3">Toggle label locations</Forms.FormTitle>
+            <Forms.FormText className={Margins.bottom8} type={Forms.FormText.Types.DESCRIPTION}>Toggle locations labels show up.</Forms.FormText>
+            <Flex flexDirection="row">
+                {Object.keys(settings.store.allowLevel).map(key => (
+                    <AllowLevelSetting key={key} settingKey={key as keyof AllowLevels} />
+                ))}
+            </Flex>
+        </Forms.FormSection>
+    );
+});
 
 const settings = definePluginSettings({
     oneBadgePerChannel: {
@@ -18,25 +64,15 @@ const settings = definePluginSettings({
         hidden: true,
         onChange: reloadBadges,
     },
-    showTextBadge: {
-        type: OptionType.BOOLEAN,
-        default: true,
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
-    showVoiceBadge: {
-        type: OptionType.BOOLEAN,
-        default: true,
-        hidden: true,
-        description: "",
-        onChange: reloadBadges,
-    },
-    showStageBadge: {
-        type: OptionType.BOOLEAN,
-        default: true,
-        description: "",
-        hidden: true,
+    allowLevel: {
+        type: OptionType.COMPONENT,
+        component: AllowLevelSettings,
+        default: defineDefault<AllowLevels>({
+            showTextBadge: true,
+            showVoiceBadge: true,
+            showStageBadge: true,
+            showUnknownBadge: true,
+        }),
         onChange: reloadBadges,
     },
 
@@ -53,35 +89,7 @@ const settings = definePluginSettings({
         description: "Show NSFW badge.",
         onChange: reloadBadges,
     },
-    showUnknownBadge: {
-        type: OptionType.BOOLEAN,
-        default: true,
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
 
-    textBadgeLabel: {
-        type: OptionType.STRING,
-        default: "",
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
-    voiceBadgeLabel: {
-        type: OptionType.STRING,
-        default: "",
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
-    stageBadgeLabel: {
-        type: OptionType.STRING,
-        default: "",
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
     nsfwBadgeLabel: {
         type: OptionType.STRING,
         default: "NSFW",
@@ -89,41 +97,25 @@ const settings = definePluginSettings({
         description: "NSFW badge label.",
         onChange: reloadBadges,
     },
-    unknownBadgeLabel: {
-        type: OptionType.STRING,
-        default: "",
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
 
-
-    textBadgeColor: {
-        type: OptionType.STRING,
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
-    voiceBadgeColor: {
-        type: OptionType.STRING,
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
-    stageBadgeColor: {
-        type: OptionType.STRING,
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
     nsfwBadgeColor: {
         type: OptionType.STRING,
         description: "NSFW badge color. Supports almost any color format.",
         placeholder: "#ff0000",
         onChange: reloadBadges,
     },
+
+
+    // These exists because plugin wouldn't work with out them
     unknownBadgeColor: {
         type: OptionType.STRING,
+        description: "",
+        hidden: true,
+        onChange: reloadBadges,
+    },
+    unknownBadgeLabel: {
+        type: OptionType.STRING,
+        default: "",
         description: "",
         hidden: true,
         onChange: reloadBadges,
@@ -152,28 +144,28 @@ function isEnabled(type: number) {
 
     switch (type) {
         case 0:
-            return fromValues.showTextBadge;
+            return fromValues.allowLevel.showTextBadge;
         case 2:
-            return fromValues.showVoiceBadge;
+            return fromValues.allowLevel.showVoiceBadge;
         case 13:
-            return fromValues.showStageBadge;
+            return fromValues.allowLevel.showStageBadge;
         case 14:
         case 6100:
             return fromValues.showNsfwBadge;
         default:
-            return fromValues.showUnknownBadge;
+            return fromValues.allowLevel.showUnknownBadge;
     }
 }
 
 function returnChannelBadge(type: number) {
     switch (type) {
         case 0:
-            return { css: "text", label: settings.store.textBadgeLabel, color: settings.store.textBadgeColor };
+            return { css: "text", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
         case 2:
-            return { css: "voice", label: settings.store.voiceBadgeLabel, color: settings.store.voiceBadgeColor };
+            return { css: "voice", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
         case 4:
         case 13:
-            return { css: "stage", label: settings.store.stageBadgeLabel, color: settings.store.stageBadgeColor };
+            return { css: "stage", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
         case 6100:
             return { css: "nsfw", label: settings.store.nsfwBadgeLabel, color: settings.store.nsfwBadgeColor };
         default:
@@ -181,4 +173,4 @@ function returnChannelBadge(type: number) {
     }
 }
 
-export { defaultValues, isEnabled, returnChannelBadge, settings, style };
+export { defaultValues, isEnabled, Nsfwstyle, returnChannelBadge, settings };
