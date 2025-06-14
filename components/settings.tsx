@@ -45,8 +45,8 @@ function AllowLevelSetting({ settingKey }: AllowLevelSettingProps) {
 const AllowLevelSettings = ErrorBoundary.wrap(() => {
     return (
         <Forms.FormSection>
-            <Forms.FormTitle tag="h3">Toggle label locations</Forms.FormTitle>
-            <Forms.FormText className={Margins.bottom8} type={Forms.FormText.Types.DESCRIPTION}>Toggle locations labels show up.</Forms.FormText>
+            <Forms.FormTitle tag="h3">Toggle badge locations</Forms.FormTitle>
+            <Forms.FormText className={Margins.bottom8} type={Forms.FormText.Types.DESCRIPTION}>Toggle locations badge shows up.</Forms.FormText>
             <Flex flexDirection="row">
                 {Object.keys(settings.store.allowLevel).map(key => (
                     <AllowLevelSetting key={key} settingKey={key as keyof AllowLevels} />
