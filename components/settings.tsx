@@ -13,7 +13,7 @@ import { defineDefault, OptionType } from "@utils/types";
 import { Checkbox, Forms, Text } from "@webpack/common";
 
 import { reloadBadges } from "../index";
-import Nsfwstyle from "./import/triangleNsfwRecolor.css?managed";
+import Colorfulstyle from "./import/colorfulIcons.css?managed";
 
 interface AllowLevels {
     showTextBadge: boolean;
@@ -76,10 +76,10 @@ const settings = definePluginSettings({
         onChange: reloadBadges,
     },
 
-    recolorNsfwTriangle: {
+    colorfulChannelIcons: {
         type: OptionType.BOOLEAN,
         default: false,
-        description: "Recolor the triangle in the icon for NSFW channels.",
+        description: "Makes channel icons with symbols more colorful.",
         restartNeeded: true
     },
 
@@ -173,4 +173,4 @@ function returnChannelBadge(type: number) {
     }
 }
 
-export { defaultValues, isEnabled, Nsfwstyle, returnChannelBadge, settings };
+export { Colorfulstyle, defaultValues, isEnabled, returnChannelBadge, settings };
