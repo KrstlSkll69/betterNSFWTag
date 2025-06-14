@@ -1,7 +1,7 @@
 # betterNSFWTag
 Add NSFW badge next to those type of channels. </br>
 
-_(Photo includes Recolor NSFW Triangle setting enabled)_</br>
+_(Photo includes Colourful Channel Icons setting enabled)_</br>
 ![](https://cdn.nest.rip/uploads/77083e4a-e24b-4e82-b997-2da6661cfb8f.png)</br>
 
 _(Photo does not includes Recolor NSFW Triangle setting enabled)_</br>
@@ -10,7 +10,7 @@ _(Photo does not includes Recolor NSFW Triangle setting enabled)_</br>
 ---
 </br>
 
-![](https://cdn.nest.rip/uploads/7a5f0190-4922-4e4f-854f-e29e92222bc3.png)
+![](https://cdn.nest.rip/uploads/0980d284-3e5b-4c4e-a920-2e4a9d0553fe.png)
 
 ---
 

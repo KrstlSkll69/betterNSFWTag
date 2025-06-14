@@ -13,7 +13,7 @@ import { defineDefault, OptionType } from "@utils/types";
 import { Checkbox, Forms, Text } from "@webpack/common";
 
 import { reloadBadges } from "../index";
-import Colorfulstyle from "./import/colorfulIcons.css?managed";
+import Colourfulstyle from "./import/colorfulIcons.css?managed";
 
 interface AllowLevels {
     showTextBadge: boolean;
@@ -76,7 +76,7 @@ const settings = definePluginSettings({
         onChange: reloadBadges,
     },
 
-    colorfulChannelIcons: {
+    colourfulChannelIcons: {
         type: OptionType.BOOLEAN,
         default: false,
         description: "Makes channel icons with symbols more colorful.",
@@ -173,4 +173,4 @@ function returnChannelBadge(type: number) {
     }
 }
 
-export { Colorfulstyle, defaultValues, isEnabled, returnChannelBadge, settings };
+export { Colourfulstyle, defaultValues, isEnabled, returnChannelBadge, settings };

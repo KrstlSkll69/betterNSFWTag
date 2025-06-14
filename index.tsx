@@ -12,7 +12,7 @@ import definePlugin from "@utils/types";
 import { ChannelStore, Forms, SelectedGuildStore } from "@webpack/common";
 import { Channel, Guild } from "discord-types/general";
 
-import { Colorfulstyle, isEnabled, returnChannelBadge, settings } from "./components/settings";
+import { Colourfulstyle, isEnabled, returnChannelBadge, settings } from "./components/settings";
 
 let observer: MutationObserver | null = null;
 let currentGuild: Guild | undefined | null = null;
@@ -132,7 +132,7 @@ export default definePlugin({
         observeDomChanges();
         reloadBadges();
         SelectedGuildStore.addChangeListener(onGuildChange);
-        if (settings.store.colorfulChannelIcons) enableStyle(Colorfulstyle);
+        if (settings.store.colourfulChannelIcons) enableStyle(Colourfulstyle);
 
     },
 
@@ -143,7 +143,7 @@ export default definePlugin({
         }
         deleteAllBadges();
         SelectedGuildStore.removeChangeListener(onGuildChange);
-        if (settings.store.colorfulChannelIcons) disableStyle(Colorfulstyle);
+        if (settings.store.colourfulChannelIcons) disableStyle(Colourfulstyle);
 
     },
 
