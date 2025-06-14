@@ -4,11 +4,10 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import "./customSize.css";
+import "./style.css";
 
 import { definePluginSettings } from "@api/Settings";
-import { ErrorBoundary, Flex } from "@components/index";
-import { Margins } from "@utils/index";
+import { ErrorBoundary, Flex, Link } from "@components/index";
 import { defineDefault, OptionType } from "@utils/types";
 import { Checkbox, Forms, Text } from "@webpack/common";
 
@@ -46,7 +45,8 @@ const AllowLevelSettings = ErrorBoundary.wrap(() => {
     return (
         <Forms.FormSection>
             <Forms.FormTitle tag="h3">Toggle badge locations</Forms.FormTitle>
-            <Forms.FormText className={Margins.bottom8} type={Forms.FormText.Types.DESCRIPTION}>Toggle locations badge shows up.</Forms.FormText>
+            <Forms.FormText className="vc-locationsDescription">Toggle locations badge shows up.</Forms.FormText>
+            <Forms.FormText className="vc-unknownMoreInfo">Unknown includes such channels as <Link className="vc-mediaChannel" href="https://creator-support.discord.com/hc/en-us/articles/14346342766743-Media-Channels-for-Server-Subscriptions-BETA"> Media Channels</Link></Forms.FormText>
             <Flex flexDirection="row">
                 {Object.keys(settings.store.allowLevel).map(key => (
                     <AllowLevelSetting key={key} settingKey={key as keyof AllowLevels} />

@@ -1,0 +1,19 @@
+.vc-badgeLocation-txt{
+    font-size: 13px;
+}
+
+.vc-unknownMoreInfo{
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-style: italic;
+    color:  var(--info-warning-text);
+}
+
+.vc-mediaChannel{
+    color:  var(--info-warning-text);
+    font-weight: bold;
+}
+
+.vc-locationsDescription{
+    margin-bottom: 5px;
+}
