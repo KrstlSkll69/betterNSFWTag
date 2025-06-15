@@ -52,7 +52,7 @@ const AllowLevelSettings = ErrorBoundary.wrap(() => {
                 Rules or Guidelines,
                 <Link className="vc-moreInfo-href" href="https://support.discord.com/hc/en-us/articles/360032008192-Announcement-Channel-FAQ"> Announcement</Link>,
                 <Link className="vc-moreInfo-href" href="https://support.discord.com/hc/en-us/articles/4403205878423-Threads-FAQ"> Threads</Link>.
-                </Forms.FormText>
+            </Forms.FormText>
             <Flex flexDirection="row">
                 {Object.keys(settings.store.allowLevel).map(key => (
                     <AllowLevelSetting key={key} settingKey={key as keyof AllowLevels} />
@@ -105,7 +105,7 @@ const settings = definePluginSettings({
 
 
     // These exists because plugin wouldn't work with out them
-        oneBadgePerChannel: {
+    oneBadgePerChannel: {
         type: OptionType.BOOLEAN,
         default: false,
         description: "",
