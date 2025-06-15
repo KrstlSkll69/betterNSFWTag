@@ -47,11 +47,11 @@ const AllowLevelSettings = ErrorBoundary.wrap(() => {
             <Forms.FormTitle tag="h3">Toggle badge locations</Forms.FormTitle>
             <Forms.FormText className="vc-locationsDescription">Toggle locations badge shows up.</Forms.FormText>
             <Forms.FormText className="vc-unknownMoreInfo">Unknown includes such channels as
-                <Link className="vc-mediaChannel" href="https://creator-support.discord.com/hc/en-us/articles/14346342766743-Media-Channels-for-Server-Subscriptions-BETA"> Media</Link>,
-                <Link className="vc-mediaChannel" href="https://discord.com/community/creating-value-with-conversation"> Forum</Link>,
+                <Link className="vc-moreInfo-href" href="https://creator-support.discord.com/hc/en-us/articles/14346342766743-Media-Channels-for-Server-Subscriptions-BETA"> Media</Link>,
+                <Link className="vc-moreInfo-href" href="https://discord.com/community/creating-value-with-conversation"> Forum</Link>,
                 Rules or Guidelines,
-                <Link className="vc-mediaChannel" href="https://support.discord.com/hc/en-us/articles/360032008192-Announcement-Channel-FAQ"> Announcement</Link>,
-                <Link className="vc-mediaChannel" href="https://support.discord.com/hc/en-us/articles/4403205878423-Threads-FAQ"> Threads</Link>.
+                <Link className="vc-moreInfo-href" href="https://support.discord.com/hc/en-us/articles/360032008192-Announcement-Channel-FAQ"> Announcement</Link>,
+                <Link className="vc-moreInfo-href" href="https://support.discord.com/hc/en-us/articles/4403205878423-Threads-FAQ"> Threads</Link>.
                 </Forms.FormText>
             <Flex flexDirection="row">
                 {Object.keys(settings.store.allowLevel).map(key => (

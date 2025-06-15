@@ -9,7 +9,7 @@
     color:  var(--info-warning-text);
 }
 
-.vc-mediaChannel{
+.vc-moreInfo-href{
     color:  var(--info-warning-text);
     font-weight: bold;
 }
