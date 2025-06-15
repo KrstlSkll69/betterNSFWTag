@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+import "./style.css";
+
 import { ErrorBoundary, Flex, Link } from "@components/index";
 import { Checkbox, Forms, Text } from "@webpack/common";
 
