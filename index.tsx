@@ -123,6 +123,7 @@ export default definePlugin({
         { name: "creations", id: 209830981060788225n },
         { name: "krystalskullofficial", id: 929208515883569182n },
     ],
+    tags: ["Nsfw", "NSFW", "NSFWTag", "Accessibility"],
     settingsAboutComponent: () => <>
         <Forms.FormText className="vc-pluginFormat vc-pluginNotice">
             Be sure to include the pound/ hashtag (#) symbol when using Hex code format.
