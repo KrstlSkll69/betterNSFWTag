@@ -63,13 +63,6 @@ const AllowLevelSettings = ErrorBoundary.wrap(() => {
 });
 
 const settings = definePluginSettings({
-    oneBadgePerChannel: {
-        type: OptionType.BOOLEAN,
-        default: false,
-        description: "",
-        hidden: true,
-        onChange: reloadBadges,
-    },
     allowLevel: {
         type: OptionType.COMPONENT,
         component: AllowLevelSettings,
@@ -95,7 +88,6 @@ const settings = definePluginSettings({
         description: "Show NSFW badge.",
         onChange: reloadBadges,
     },
-
     nsfwBadgeLabel: {
         type: OptionType.STRING,
         default: "NSFW",
@@ -113,6 +105,13 @@ const settings = definePluginSettings({
 
 
     // These exists because plugin wouldn't work with out them
+        oneBadgePerChannel: {
+        type: OptionType.BOOLEAN,
+        default: false,
+        description: "",
+        hidden: true,
+        onChange: reloadBadges,
+    },
     unknownBadgeColor: {
         type: OptionType.STRING,
         description: "",
