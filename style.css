@@ -1,4 +1,4 @@
-.channel-badge {
+.channel-badge-main {
     color: var(--status-danger-text);
     font-family: var(--font-code);
     padding: 0 4px;
@@ -10,7 +10,7 @@
     margin-left: 4px;
 }
 
-.badge-container {
+.badge-container-main {
     display: flex;
     gap: 0.1rem;
     align-items: center;
@@ -18,11 +18,11 @@
     order: 2;
 }
 
-.channel-badge-text, .channel-badge-unknown, .channel-badge-voice, .channel-badge-stage{
+.misc-channel-badge-text, .misc-channel-badge-unknown, .misc-channel-badge-voice, .misc-channel-badge-stage{
     display: none !important;
 }
 
-.channel-badge-nsfw {
+.misc-channel-badge-nsfw {
     background-color: var(--status-danger-background);
 }
 

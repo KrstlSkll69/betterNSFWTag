@@ -28,10 +28,10 @@ function addBadgesToChannel(element: HTMLElement, channelId: string) {
     const { type, nsfw } = channel;
     const isNSFW = nsfw || channel.isNSFW();
 
-    let badgeContainer: HTMLElement | null = parentContainer.querySelector(".badge-container");
+    let badgeContainer: HTMLElement | null = parentContainer.querySelector(".badge-container-main");
     if (!badgeContainer) {
         badgeContainer = document.createElement("div");
-        badgeContainer.classList.add("badge-container");
+        badgeContainer.classList.add("badge-container-main");
         parentContainer.appendChild(badgeContainer);
     }
 
@@ -49,7 +49,7 @@ function addBadgesToChannel(element: HTMLElement, channelId: string) {
 function addBadge(container: HTMLElement, id: number, title: string) {
     const { css, label, color } = returnChannelBadge(id);
     const badge = document.createElement("div");
-    badge.classList.add("channel-badge", `channel-badge-${css}`);
+    badge.classList.add("channel-badge-main", `misc-channel-badge-${css}`);
     badge.textContent = label;
     badge.title = title;
 
