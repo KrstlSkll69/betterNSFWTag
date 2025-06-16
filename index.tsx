@@ -137,7 +137,6 @@ export default definePlugin({
         reloadBadges();
         SelectedGuildStore.addChangeListener(onGuildChange);
         if (settings.store.colourfulChannelIcons) enableStyle(Colourfulstyle);
-
     },
 
     stop() {
@@ -148,8 +147,6 @@ export default definePlugin({
         deleteAllBadges();
         SelectedGuildStore.removeChangeListener(onGuildChange);
         if (settings.store.colourfulChannelIcons) disableStyle(Colourfulstyle);
-
     },
-
 
 });
