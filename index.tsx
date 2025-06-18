@@ -121,6 +121,7 @@ export default definePlugin({
     authors: [
         Devs.Nuckyz,
         Devs.sadan,
+        // Import from EquicordDev for Equicord
         { name: "creations", id: 209830981060788225n },
         { name: "krystalskullofficial", id: 929208515883569182n },
     ],
