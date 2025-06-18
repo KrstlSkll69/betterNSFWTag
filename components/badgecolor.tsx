@@ -22,12 +22,13 @@ const nsfwBadgeColor = ErrorBoundary.wrap(() => {
                 NSFW tag colour. Supports all web colour formats (hex, rgb, hsl, etc). Default is <a className="vc-locationsDescription-red">Red</a>.
             </Forms.FormText>
             <Forms.FormText className="vc-unknownMoreInfo">
-                Be sure to include the pound/ hashtag (#) symbol when using Hex code format. < br/>
+                Be sure to include the pound/ hashtag (#) symbol when using Hex code format. < br />
                 Swapping servers is required for colour change to sync.
             </Forms.FormText>
             <TextInput
                 onChange={v => {
                     settings.store.nsfwTagColour = v;
+                    // console.log(v);
                     reloadBadges;
                 }}
                 placeholder="#ff0000"
