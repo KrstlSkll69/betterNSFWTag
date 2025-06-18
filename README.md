@@ -10,7 +10,7 @@ _(Photo does not include Colourful Channel Icons setting enabled)_</br>
 ---
 </br>
 
-![](https://cdn.nest.rip/uploads/4b6449f3-1f06-4f7f-8fab-6ddf8dca6159.png)
+![](https://cdn.nest.rip/uploads/a52b8df1-8ff9-43c6-91da-614e1c5bba5b.png)
 
 ---
 
