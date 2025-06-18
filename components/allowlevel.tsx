@@ -33,7 +33,6 @@ function AllowLevelSetting({ settingKey }: AllowLevelSettingProps) {
             onChange={(_, newValue) => settings.store.allowLevel[settingKey] = newValue}
             size={20}
         >
-
             <Text className="vc-badgeLocation-txt">{settingKey[0].toUpperCase() + settingKey.slice(1)}</Text>
         </Checkbox>
     );
@@ -70,7 +69,10 @@ const nsfwBadgeColor = ErrorBoundary.wrap(() => {
                 Be sure to include the pound/ hashtag (#) symbol when using Hex code format.
             </Forms.FormText>
             <TextInput
-                onChange={reloadBadges}
+                onChange={v => {
+                    settings.store.nsfwBadgeColour = v;
+                    reloadBadges;
+                }}
                 placeholder="#ff0000"
                 value={settings.store.nsfwBadgeColour}
             >
@@ -78,5 +80,7 @@ const nsfwBadgeColor = ErrorBoundary.wrap(() => {
         </Forms.FormSection>
     );
 });
+
+
 
 export { AllowLevels, AllowLevelSettings, nsfwBadgeColor };
