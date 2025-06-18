@@ -13,7 +13,7 @@ import { reloadBadges } from "../index";
 import { settings } from "./settings";
 
 
-
+// Big thanks to @thororen (discord) for helping with this const
 const nsfwBadgeColor = ErrorBoundary.wrap(() => {
     return (
         <Forms.FormSection>
