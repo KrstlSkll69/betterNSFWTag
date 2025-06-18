@@ -25,19 +25,3 @@
 .misc-channel-badge-nsfw {
     background-color: var(--status-danger-background);
 }
-
-.vc-pluginFormat {
-    border-radius: 5px !important;
-    font-weight: bold;
-    padding: 6px 10px;
-    text-align: center;
-    margin-top: 10px;
-    border: 1px solid;
-}
-
-.vc-pluginNotice {
-    font-size: 15px !important;
-    background-color: var(--info-warning-background) !important;
-    color: var(--info-warning-text) !important;
-    border-color: var(--info-warning-foreground) !important;
-}

@@ -10,7 +10,7 @@ import { definePluginSettings } from "@api/Settings";
 import { defineDefault, OptionType } from "@utils/types";
 
 import { reloadBadges } from "../index";
-import { AllowLevels, AllowLevelSettings } from "./allowlevel";
+import { AllowLevels, AllowLevelSettings, nsfwBadgeColor } from "./allowlevel";
 import Colourfulstyle from "./import/colorfulIcons.css?managed";
 
 
@@ -50,10 +50,8 @@ const settings = definePluginSettings({
     },
 
     nsfwBadgeColour: {
-        type: OptionType.STRING,
-        description: "NSFW badge colour. Supports almost any colour format. Default is Red.",
-        placeholder: "#ff0000",
-        onChange: reloadBadges,
+        type: OptionType.COMPONENT,
+        component: nsfwBadgeColor,
     },
 
 

@@ -7,8 +7,9 @@
 import "./style.css";
 
 import { ErrorBoundary, Flex, Link } from "@components/index";
-import { Checkbox, Forms, Text } from "@webpack/common";
+import { Checkbox, Forms, Text, TextInput } from "@webpack/common";
 
+import { reloadBadges } from "../index";
 import { settings } from "./settings";
 
 interface AllowLevels {
@@ -32,7 +33,6 @@ function AllowLevelSetting({ settingKey }: AllowLevelSettingProps) {
             onChange={(_, newValue) => settings.store.allowLevel[settingKey] = newValue}
             size={20}
         >
-
             <Text className="vc-badgeLocation-txt">{settingKey[0].toUpperCase() + settingKey.slice(1)}</Text>
         </Checkbox>
     );
@@ -58,4 +58,29 @@ const AllowLevelSettings = ErrorBoundary.wrap(() => {
     );
 });
 
-export { AllowLevels, AllowLevelSettings };
+const nsfwBadgeColor = ErrorBoundary.wrap(() => {
+    return (
+        <Forms.FormSection>
+            <Forms.FormTitle tag="h3">Nsfw Badge Color</Forms.FormTitle>
+            <Forms.FormText className="vc-locationsDescription">
+                NSFW badge colour. Supports almost any colour format. Default is Red.
+            </Forms.FormText>
+            <Forms.FormText className="vc-unknownMoreInfo">
+                Be sure to include the pound/ hashtag (#) symbol when using Hex code format.
+            </Forms.FormText>
+            <TextInput
+                onChange={v => {
+                    settings.store.nsfwBadgeColour = v;
+                    reloadBadges;
+                }}
+                placeholder="#ff0000"
+                value={settings.store.nsfwBadgeColour}
+            >
+            </TextInput>
+        </Forms.FormSection>
+    );
+});
+
+
+
+export { AllowLevels, AllowLevelSettings, nsfwBadgeColor };
