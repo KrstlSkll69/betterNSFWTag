@@ -125,6 +125,10 @@ export default definePlugin({
         { name: "krystalskullofficial", id: 929208515883569182n },
     ],
     tags: ["Nsfw", "NSFW", "NSFWTag", "Accessibility"],
+    settingsAboutComponent: () => <>
+
+    </>,
+
     settings,
 
     async start() {
