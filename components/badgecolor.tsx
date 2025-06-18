@@ -17,7 +17,7 @@ import { settings } from "./settings";
 const nsfwBadgeColor = ErrorBoundary.wrap(() => {
     return (
         <Forms.FormSection>
-            <Forms.FormTitle tag="h3">Nsfw Badge Color</Forms.FormTitle>
+            <Forms.FormTitle tag="h3">Nsfw Badge Colour</Forms.FormTitle>
             <Forms.FormText className="vc-locationsDescription">
                 NSFW badge colour. Supports almost any colour format. Default is <a className="vc-locationsDescription-red">Red</a>.
             </Forms.FormText>
