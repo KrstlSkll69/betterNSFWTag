@@ -10,7 +10,8 @@ import { definePluginSettings } from "@api/Settings";
 import { defineDefault, OptionType } from "@utils/types";
 
 import { reloadBadges } from "../index";
-import { AllowLevels, AllowLevelSettings, nsfwBadgeColor } from "./allowlevel";
+import { AllowLevels, AllowLevelSettings, } from "./allowlevel";
+import { nsfwBadgeColor } from "./badgecolor";
 import Colourfulstyle from "./import/colorfulIcons.css?managed";
 
 
