@@ -36,21 +36,21 @@ const settings = definePluginSettings({
         restartNeeded: true
     },
 
-    showNsfwBadge: {
+    showNsfwTag: {
         type: OptionType.BOOLEAN,
         default: true,
-        description: "Show NSFW badge.",
+        description: "Toggle NSFW tag on/off.",
         onChange: reloadBadges,
     },
-    nsfwBadgeLabel: {
+    nsfwTagLabel: {
         type: OptionType.STRING,
         default: "NSFW",
         placeholder: "NSFW",
-        description: "NSFW badge label.",
+        description: "Text that NSFW tag contains.",
         onChange: reloadBadges,
     },
 
-    nsfwBadgeColour: {
+    nsfwTagColour: {
         type: OptionType.COMPONENT,
         component: nsfwBadgeColor,
     },
@@ -108,7 +108,7 @@ function isEnabled(type: number) {
             return fromValues.allowLevel.showStageBadge;
         case 14:
         case 6100:
-            return fromValues.showNsfwBadge;
+            return fromValues.showNsfwTag;
         default:
             return fromValues.allowLevel.showUnknownBadge;
     }
@@ -124,7 +124,7 @@ function returnChannelBadge(type: number) {
         case 13:
             return { css: "stage", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
         case 6100:
-            return { css: "nsfw", label: settings.store.nsfwBadgeLabel, color: settings.store.nsfwBadgeColour };
+            return { css: "nsfw", label: settings.store.nsfwTagLabel, color: settings.store.nsfwTagColour };
         default:
             return { css: "unknown", label: settings.store.unknownBadgeLabel, color: settings.store.unknownBadgeColor };
     }

@@ -17,9 +17,9 @@ import { settings } from "./settings";
 const nsfwBadgeColor = ErrorBoundary.wrap(() => {
     return (
         <Forms.FormSection>
-            <Forms.FormTitle tag="h3">Nsfw Badge Colour</Forms.FormTitle>
+            <Forms.FormTitle tag="h3">Nsfw tag colour</Forms.FormTitle>
             <Forms.FormText className="vc-locationsDescription">
-                NSFW badge colour. Supports all web colour formats (hex, rgb, hsl, etc). Default is <a className="vc-locationsDescription-red">Red</a>.
+                NSFW tag colour. Supports all web colour formats (hex, rgb, hsl, etc). Default is <a className="vc-locationsDescription-red">Red</a>.
             </Forms.FormText>
             <Forms.FormText className="vc-unknownMoreInfo">
                 Be sure to include the pound/ hashtag (#) symbol when using Hex code format. < br/>
@@ -27,11 +27,11 @@ const nsfwBadgeColor = ErrorBoundary.wrap(() => {
             </Forms.FormText>
             <TextInput
                 onChange={v => {
-                    settings.store.nsfwBadgeColour = v;
+                    settings.store.nsfwTagColour = v;
                     reloadBadges;
                 }}
                 placeholder="#ff0000"
-                value={settings.store.nsfwBadgeColour}
+                value={settings.store.nsfwTagColour}
             >
             </TextInput>
         </Forms.FormSection>
