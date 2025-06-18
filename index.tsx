@@ -10,6 +10,7 @@ import { disableStyle, enableStyle } from "@api/Styles";
 import { Devs } from "@utils/constants";
 import { getCurrentGuild } from "@utils/discord";
 import definePlugin from "@utils/types";
+// eslint-disable-next-line unused-imports/no-unused-imports
 import { ChannelStore, Forms, SelectedGuildStore } from "@webpack/common";
 import { Channel, Guild } from "discord-types/general";
 
@@ -124,11 +125,6 @@ export default definePlugin({
         { name: "krystalskullofficial", id: 929208515883569182n },
     ],
     tags: ["Nsfw", "NSFW", "NSFWTag", "Accessibility"],
-    settingsAboutComponent: () => <>
-        <Forms.FormText className="vc-pluginFormat vc-pluginNotice">
-            Be sure to include the pound/ hashtag (#) symbol when using Hex code format.
-        </Forms.FormText>
-    </>,
     settings,
 
     async start() {
