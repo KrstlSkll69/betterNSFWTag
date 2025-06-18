@@ -19,7 +19,7 @@ const nsfwBadgeColor = ErrorBoundary.wrap(() => {
         <Forms.FormSection>
             <Forms.FormTitle tag="h3">Nsfw Badge Colour</Forms.FormTitle>
             <Forms.FormText className="vc-locationsDescription">
-                NSFW badge colour. Supports almost any colour format. Default is <a className="vc-locationsDescription-red">Red</a>.
+                NSFW badge colour. Supports all web colour formats (hex, rgb, hsl, etc). Default is <a className="vc-locationsDescription-red">Red</a>.
             </Forms.FormText>
             <Forms.FormText className="vc-unknownMoreInfo">
                 Be sure to include the pound/ hashtag (#) symbol when using Hex code format. < br/>
