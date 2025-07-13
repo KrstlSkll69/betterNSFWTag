@@ -6,11 +6,11 @@
     margin-bottom: 8px;
     font-size: 10px;
     font-style: italic;
-    color:  var(--info-warning-text);
+    color:  var(--info-warning-foreground);
 }
 
 .vc-moreInfo-href{
-    color:  var(--info-warning-text);
+    color: var(--info-warning-foreground);
     font-weight: bold;
 }
 

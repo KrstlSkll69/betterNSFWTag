@@ -10,9 +10,9 @@ import { disableStyle, enableStyle } from "@api/Styles";
 import { Devs } from "@utils/constants";
 import { getCurrentGuild } from "@utils/discord";
 import definePlugin from "@utils/types";
+import { Channel, Guild } from "@vencord/discord-types";
 // eslint-disable-next-line unused-imports/no-unused-imports
 import { ChannelStore, Forms, SelectedGuildStore } from "@webpack/common";
-import { Channel, Guild } from "discord-types/general";
 
 import { Colourfulstyle, isEnabled, returnChannelBadge, settings } from "./components/settings";
 
